@@ -42,6 +42,9 @@
 (define (degrees->radians deg)
   (/ (* deg pi) 180))
 
+(define (radians->degrees rad)
+  (/ (* rad 180) pi))
+
 (define max-latitude 85.05112878)
 
 (define min-latitude (- max-latitude))
@@ -79,9 +82,7 @@
     (let*-values (((tx ty) (unmerge-bits (quadkey-value qk)))
                   ((x) (- (normalize tx) 0.5))
                   ((y) (- 0.5 (normalize ty))))
-      (values (- 90 (* 360
-                       (/ (atan (exp (* y -2 pi)))
-                          pi)))
+      (values (- 90 (* 2 (radians->degrees (atan (exp (* y -2 pi))))))
               (* 360 x)))))
 
 (define (merge-bits x y)
