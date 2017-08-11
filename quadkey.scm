@@ -94,7 +94,7 @@
                   ((py) (tile-point->pixel-point ty))
                   ((x) (- (normalize px) 0.5))
                   ((y) (- 0.5 (normalize py))))
-      (values (- 90 (* 2 (radians->degrees (atan (exp (* y -2 pi))))))
+      (values (- 90 (* 2 (radians->degrees (atan (exp (* -2 pi y))))))
               (* 360 x)))))
 
 (define (merge-bits x y)
