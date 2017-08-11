@@ -67,10 +67,8 @@
              0
              (- t 1)))
     (let* ((tx (normalize (/ (+ lng 180) 360)))
-           (sin-lat (sin (degrees->radians lat)))
-           (ty (normalize (- 0.5 (/ (log (/ (+ 1 sin-lat)
-                                            (- 1 sin-lat)))
-                                    4 pi))))
+           (ty (normalize (- 0.5 (/ (atanh (sin (degrees->radians lat)))
+                                    2 pi))))
            (v (merge-bits tx ty)))
       (%make-quadkey v level))))
 
