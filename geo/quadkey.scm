@@ -1,10 +1,9 @@
-(define-module quadkey
+(define-module geo.quadkey
   (export make-quadkey quadkey? quadkey-value quadkey-level
           quadkey-level? min-quadkey-level max-quadkey-level
           valid-latitude? max-latitude min-latitude
           valid-longitude? max-longitude min-longitude
           quadkey->string quadkey->latitude&longitude
-          merge-bits unmerge-bits
           string->quadkey
           quadkey-has-parent? quadkey-parent
           quadkey-has-child? quadkey-child
@@ -19,7 +18,7 @@
   (use gauche.record)
   (use math.const))
 
-(select-module quadkey)
+(select-module geo.quadkey)
 
 (define-record-type quadkey
     %make-quadkey

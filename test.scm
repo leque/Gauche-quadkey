@@ -1,16 +1,17 @@
-(use srfi-11)
 (use gauche.test)
+
+(use srfi-11)
 (use gauche.generator)
 (use data.random)
 (use util.match)
 
-(use quadkey)
+(use geo.quadkey)
 
-(test-start "quadkey")
+(test-start "geo.quadkey")
 
-(test-module 'quadkey)
+(test-module 'geo.quadkey)
 
-(define test-count 10000)
+(define test-count 1000)
 
 (define level-1-map
   '#(
@@ -73,7 +74,6 @@
 (test-neighbors level-2-map)
 (test-neighbors level-3-map)
 
-#;
 (let ((n test-count))
   (do-generator (level&lat&lng
                  (gtake (tuples-of
@@ -97,7 +97,6 @@
          (string-length (quadkey->string qk))
          ))
 
-#;
 (let ((n test-count))
   (do-generator (level&lat&lng
                  (gtake (tuples-of
@@ -114,4 +113,4 @@
                  (lat&lng~ (values->list (quadkey->latitude&longitude qk2))))
       (test* #"quadkey-fixpoint (~level)" lat&lng lat&lng~))))
 
-(test-end)
+(test-end :exit-on-failure #t)
