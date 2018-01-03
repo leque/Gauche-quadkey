@@ -8,8 +8,7 @@
 
   ;; Description of the package.  The first line is used as a short
   ;; summary.
-  :description "Sample package.scm\n\
-                Write your package description here."
+  :description "A Quadkey implementation in Gauche"
 
   ;; List of dependencies.
   ;; Example:
@@ -29,7 +28,7 @@
 
   ;; List licenses
   ;; e.g. ("BSD")
-  :licenses ("BSD")
+  :licenses ("MIT")
 
   ;; Homepage URL, if any.
   ; :homepage "http://example.com/Gauche-quadkey/"

@@ -1,0 +1,7 @@
+= Gauche-quadkey
+
+A link:https://msdn.microsoft.com/ja-jp/library/bb259689.aspx[Quadkey] implementation in link:http://practical-scheme.net/gauche/[Gauche] Scheme interpreter.
+
+== License
+
+MIT
